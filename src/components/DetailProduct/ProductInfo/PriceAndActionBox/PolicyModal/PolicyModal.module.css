@@ -1,0 +1,18 @@
+.wrapper {
+  width: 40rem;
+  font-size: 1.4rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.link {
+  font-size: 1.4rem;
+  color: rgb(8, 88, 153);
+}

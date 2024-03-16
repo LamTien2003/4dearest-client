@@ -1,0 +1,9 @@
+.dropdown__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdown__content {
+  padding-left: 2.4rem;
+}

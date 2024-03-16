@@ -1,0 +1,20 @@
+.wrapper {
+  padding: 4rem 0;
+  max-width: 800px;
+  margin: auto;
+  font-size: 2rem;
+}
+
+.title {
+  font-size: 4.2rem;
+  line-height: 4.2rem;
+  font-weight: 600;
+  text-align: center;
+}
+.wrapper > p,
+.wrapper strong {
+  margin: 2rem 0;
+}
+.wrapper a {
+  color: rgb(8, 88, 153);
+}

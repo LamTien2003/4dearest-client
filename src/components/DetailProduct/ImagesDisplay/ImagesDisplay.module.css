@@ -1,0 +1,58 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding: 0 2rem;
+}
+
+.slider {
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.list-images {
+  width: 70%;
+  padding: 2rem;
+}
+
+.list-images__item {
+  cursor: pointer;
+}
+
+.list-images__slide {
+  width: 120px;
+  height: 60px;
+  padding: 0 0.2rem;
+}
+
+.active-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.active-image img {
+  width: 50rem;
+  height: 60rem;
+  object-fit: contain;
+}
+.mounting-animation {
+  animation: mounting 1s;
+}
+@keyframes mounting {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1000px) {
+  .active-image img {
+    width: 35rem;
+    height: 40rem;
+  }
+}

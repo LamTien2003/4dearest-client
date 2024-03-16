@@ -1,0 +1,35 @@
+.left-sort {
+  font-size: 1.5rem;
+  color: var(--color-gray-700);
+  line-height: 2rem;
+}
+
+.left-sort__action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.btn-filter {
+  display: flex;
+}
+
+/* @media (max-width: 1000px) {
+  .left-sort {
+    gap: 2rem;
+  }
+  .left-sort__action {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+  }
+  .left-sort__action button {
+    order: 2;
+  }
+
+  .btn-filter {
+    display: flex !important;
+  }
+} */

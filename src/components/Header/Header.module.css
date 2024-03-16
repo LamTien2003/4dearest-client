@@ -1,0 +1,39 @@
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 101;
+  background-color: var(--primary-color-100);
+}
+
+.header {
+  max-width: var(--max-width);
+  height: var(--height-header);
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  padding: 1.6rem 2rem;
+  gap: 4rem;
+}
+
+.logo {
+  justify-self: center;
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 1200px) {
+  .header {
+    padding: 1.6rem 2rem;
+  }
+  .logo {
+    flex: 1;
+    order: 2;
+  }
+}
+@media only screen and (max-width: 475px) {
+  .header {
+    gap: 2rem;
+  }
+}

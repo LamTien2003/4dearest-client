@@ -1,0 +1,36 @@
+.wrapper {
+  width: 40rem;
+  padding: 2rem;
+}
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.coupon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-gray-400);
+  border-radius: 2px;
+  padding: 1rem;
+}
+
+.coupon__title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-gray-800);
+}
+.coupon__sub-title {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--color-gray-800);
+  margin-bottom: 4px;
+}
+.coupon__description {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--color-gray-700);
+}

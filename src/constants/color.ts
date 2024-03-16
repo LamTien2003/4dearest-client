@@ -1,0 +1,19 @@
+export const COLOR_GRAY_100 = "#fff";
+export const COLOR_GRAY_200 = "#f8f7fa";
+export const COLOR_GRAY_300 = "#f3f3f5";
+export const COLOR_GRAY_400 = "#ecebf0";
+export const COLOR_GRAY_500 = "#d6d5d9";
+export const COLOR_GRAY_600 = "#bcbbbf";
+export const COLOR_GRAY_700 = "#8a898c";
+export const COLOR_GRAY_800 = "#585759";
+export const COLOR_GRAY_900 = "#252526";
+
+export const COLOR_PRIMARY_100 = "#faf6f0";
+export const COLOR_PRIMARY_200 = "#f4eae0";
+export const COLOR_PRIMARY_300 = "#f4dfc8";
+export const COLOR_PRIMARY_400 = "#EDCAA5";
+export const COLOR_PRIMARY_500 = "#E2B482";
+export const COLOR_PRIMARY_600 = "#DAA46B";
+export const COLOR_PRIMARY_700 = "#DC9F5E";
+export const COLOR_PRIMARY_800 = "#D9964E";
+export const COLOR_PRIMARY_900 = "#DD9140";

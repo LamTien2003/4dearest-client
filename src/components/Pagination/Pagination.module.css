@@ -1,0 +1,27 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  gap: 1rem;
+  font-size: 1.8rem;
+}
+
+.page {
+  padding: 0.6rem 1rem;
+  transition: all linear 0.2s;
+}
+.page--active {
+  color: var(--primary-color-400);
+  border-bottom: 1px solid var(--primary-color-400);
+}
+
+.prev-btn,
+.next-btn {
+  padding: 0.6rem 1.6rem;
+  border-radius: 2px;
+  background-color: var(--color-gray-200);
+}
+.disable-btn {
+  opacity: 0.3;
+  cursor: not-allowed;
+}

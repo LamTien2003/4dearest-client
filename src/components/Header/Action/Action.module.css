@@ -1,0 +1,54 @@
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 3rem;
+  flex: 1;
+}
+
+.actions__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: all linear 0.25s;
+}
+
+.actions__item:hover a {
+  opacity: 0.5;
+}
+
+.search-popup {
+  position: absolute;
+  top: 5rem;
+  right: -2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 30rem;
+  min-height: 4rem;
+  background-color: var(--primary-color-100);
+  transition: all linear 0.15s;
+}
+
+.search-popup__input input {
+  height: 4.8rem !important;
+}
+
+@media only screen and (max-width: 1200px) {
+  .liked-product {
+    display: none;
+  }
+  .actions {
+    min-width: 0;
+    gap: 1rem;
+    order: 3;
+  }
+  .search-popup {
+    top: 4.5rem;
+    width: 100vw;
+  }
+}

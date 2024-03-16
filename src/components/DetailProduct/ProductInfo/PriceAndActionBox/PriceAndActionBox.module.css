@@ -1,0 +1,133 @@
+.price-box {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--color-gray-500);
+}
+.price-box__price {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+.initial-price {
+  display: block;
+  position: relative;
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--color-gray-500);
+}
+.initial-price::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-gray-600);
+}
+.discount-price {
+  font-size: 2.6rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+}
+
+.price-box__view {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.4rem;
+  color: var(--color-gray-700);
+}
+
+.price-box-popup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+.price-box-popup__item {
+  display: flex;
+  gap: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+  transition: all linear 0.25s;
+  cursor: pointer;
+}
+.price-box-popup__item:hover {
+  color: var(--primary-color-500);
+}
+
+/* Color pick */
+.picking-box {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--color-gray-500);
+}
+
+.color-picking__title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--color-gray-800);
+  margin-bottom: 1rem;
+}
+
+.color-picking__list {
+  display: flex;
+  gap: 1.6rem;
+}
+.circle-radio {
+  position: relative;
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background-color: black;
+  border-radius: 99999px;
+  cursor: pointer;
+  border: 1px solid var(--color-gray-700);
+}
+
+.circle-radio--active::before {
+  position: absolute;
+  content: "";
+  border-radius: 99999px;
+  border: 2px solid var(--white);
+  width: 90%;
+  height: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.disabled-radio {
+  cursor: not-allowed;
+  border: 3px solid rgb(178, 15, 15);
+}
+.disabled-radio::after {
+  position: absolute;
+  top: 37%;
+  left: 82%;
+  transform: translate(-50%, -50%);
+  rotate: -42deg;
+  content: "";
+  width: 4px;
+  height: 100%;
+  background-color: rgb(145, 18, 18);
+}
+
+/* Actions */
+.actions .add-to-cart {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1.6rem;
+}
+
+@media (max-width: 800px) {
+  .price-box-popup__item {
+    font-size: 1.2rem;
+  }
+}

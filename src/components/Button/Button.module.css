@@ -1,0 +1,99 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1.2rem 2rem;
+  transition: all linear 0.25s;
+}
+
+.xs {
+  height: 2.5rem;
+  font-size: 0.75rem;
+}
+.sm {
+  height: 3rem;
+  font-size: 1rem;
+}
+.md {
+  height: 3.5rem;
+  font-size: 1.2rem;
+}
+.lg {
+  height: 4rem;
+  font-size: 1.4rem;
+}
+.xl {
+  height: 4.8rem;
+  font-size: 1.6rem;
+}
+
+.primary {
+  color: var(--color-gray-100);
+  background-color: var(--primary-color-500);
+  border: 1px solid transparent;
+}
+.black {
+  color: var(--white);
+  background-color: var(--black);
+  border: 1px solid transparent;
+}
+.white {
+  color: var(--black);
+  background-color: var(--white);
+  border: 1px solid transparent;
+}
+.gray {
+  color: var(--color-gray-100);
+  background-color: var(--color-gray-100);
+  border: 1px solid transparent;
+}
+
+.outline.black {
+  color: var(--black);
+  border-color: var(--black);
+  background-color: transparent;
+}
+.outline.white {
+  color: var(--white);
+  border-color: var(--white);
+  background-color: transparent;
+}
+.outline.primary {
+  color: var(--primary-color-500);
+  border-color: var(--primary-color-500);
+  background-color: transparent;
+}
+
+.primary:hover {
+  color: var(--primary-color-500);
+  background-color: transparent;
+  border-color: var(--primary-color-500);
+}
+.black:hover {
+  color: var(--black);
+  background-color: var(--white);
+}
+.white:hover {
+  color: var(--white);
+  background-color: var(--black);
+}
+.outline.primary:hover {
+  border-color: transparent;
+  color: var(--color-gray-100);
+  background-color: var(--primary-color-500);
+}
+.outline.black:hover {
+  border-color: var(--white);
+}
+.outline.white:hover {
+  border-color: var(--black);
+}
+
+/* Disabled */
+.disabled,
+.disabled:hover {
+  background-color: var(--color-gray-500);
+  color: var(--color-gray-800);
+  cursor: not-allowed;
+}
