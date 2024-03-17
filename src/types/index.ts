@@ -61,6 +61,7 @@ export interface Category {
   categoryName: string;
   categoryImage: string;
   amountProducts: number;
+  parent: string | null;
   slug: string;
 }
 

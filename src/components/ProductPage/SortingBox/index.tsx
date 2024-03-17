@@ -73,7 +73,7 @@ const SortingBox = () => {
           placement={DrawerPlacement.Left}
           onClose={() => setOpenFilterModal(false)}
         >
-          <FilterBox />
+          <FilterBox onClose={() => setOpenFilterModal(false)} />
         </Drawer>
       </Form>
     </Formik>

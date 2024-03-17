@@ -16,7 +16,7 @@
 .body {
   display: flex;
   flex-wrap: wrap;
-  padding: 4rem 2rem;
+  padding: 2rem 2rem 0;
 }
 
 .prev-btn {

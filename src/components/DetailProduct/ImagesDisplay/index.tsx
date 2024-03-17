@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useContext } from "react";
+import { LazyLoadTypes } from "react-slick";
 
 import {
   DetailProductContextValue,
@@ -21,6 +22,7 @@ const settings = {
   slidesToScroll: 1,
   speed: 1000,
   autoplaySpeed: 2000,
+  lazyLoad: "ondemand" as LazyLoadTypes,
   cssEase: "cubic-bezier(0.645, 0.045, 0.355, 1.000)",
 };
 const ImagesDisplay = ({ images }: ImagesDisplayProps) => {
@@ -41,7 +43,14 @@ const ImagesDisplay = ({ images }: ImagesDisplayProps) => {
         />
       </div>
       <div className={styles["list-images"]}>
-        <Slider settings={settings} className={styles["slider"]}>
+        <Slider
+          settings={{
+            ...settings,
+            afterChange: (current: number) =>
+              context.setActiveImage(images[current]),
+          }}
+          className={styles["slider"]}
+        >
           {images?.map(image => (
             <div className={styles["list-images__slide"]} key={image}>
               <Image

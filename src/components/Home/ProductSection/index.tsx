@@ -8,7 +8,7 @@ import styles from "./ProductSection.module.css";
 const settings = {
   infinite: true,
   speed: 500,
-  autoplaySpeed: 2000,
+  autoplaySpeed: 5000,
   autoplay: true,
   cssEase: "linear",
   slidesToShow: 4,

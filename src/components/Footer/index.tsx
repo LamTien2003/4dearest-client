@@ -19,7 +19,7 @@ const Footer = () => {
             A: 46 Monterey Street, Monterey NSW 2217, Australia
           </Link>
           <Link className={styles["body-item__link"]} href={"#"}>
-            T: +417 17 4178 88
+            T: +61 417 174 788
           </Link>
           <Link className={styles["body-item__link"]} href={"#"}>
             Gmail: 4dearest.official@gmail.com

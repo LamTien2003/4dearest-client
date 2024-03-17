@@ -6,19 +6,20 @@ import Button from "@/components/Button";
 import Slider from "@/components/Slider";
 
 import { ButtonVariant } from "@/components/Button/Button.d";
+import { LazyLoadTypes } from "react-slick";
 
 const HomeSlider = () => {
   const settings = {
     dots: true,
-    fade: true,
     infinite: true,
     speed: 500,
-    autoplaySpeed: 2500,
+    autoplaySpeed: 7000,
     autoplay: true,
     cssEase: "linear",
     slidesToShow: 1,
     slidesToScroll: 1,
     waitForAnimate: false,
+    lazyLoad: "ondemand" as LazyLoadTypes,
   };
   return (
     <div className={`slider-container ${styles["wrapper"]}`}>

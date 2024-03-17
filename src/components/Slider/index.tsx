@@ -1,7 +1,7 @@
 "use client";
 import classNames from "classnames";
 import { PropsWithChildren } from "react";
-import SlickSlider, { Settings } from "react-slick";
+import SlickSlider, { LazyLoadTypes, Settings } from "react-slick";
 
 interface SliderProps extends PropsWithChildren {
   settings: Settings;
@@ -48,6 +48,7 @@ const Slider = ({ settings, className, children }: SliderProps) => {
     prevArrow: <SamplePrevArrow />,
     nextArrow: <SampleNextArrow />,
     ...settings,
+    lazyLoad: "ondemand" as LazyLoadTypes,
   };
 
   return (

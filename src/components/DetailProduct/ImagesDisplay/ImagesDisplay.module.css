@@ -21,8 +21,7 @@
 }
 
 .list-images__slide {
-  width: 120px;
-  height: 60px;
+  height: 6.5rem;
   padding: 0 0.2rem;
 }
 
@@ -35,7 +34,7 @@
 
 .active-image img {
   width: 50rem;
-  height: 60rem;
+  max-height: 60rem;
   object-fit: contain;
 }
 .mounting-animation {
@@ -47,6 +46,12 @@
   }
   100% {
     opacity: 1;
+  }
+}
+@media (min-width: 320px) and (max-width: 525px) {
+  .list-images {
+    width: 100%;
+    padding: 3rem 0;
   }
 }
 

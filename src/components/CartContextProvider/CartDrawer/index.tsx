@@ -1,4 +1,6 @@
+import Link from "next/link";
 import Image from "next/image";
+import { useMemo } from "react";
 
 import FooterCartDrawer from "@/components/CartContextProvider/CartDrawer/FooterCartDrawer";
 import Drawer from "@/components/Drawer";
@@ -9,7 +11,6 @@ import { formatCurrency } from "@/utils/helper";
 import { DrawerPlacement, DrawerSize } from "@/components/Drawer/Drawer.d";
 import { CartItem, CartStorage, ProductVariant } from "@/types";
 import styles from "./CartDrawer.module.css";
-import { useMemo } from "react";
 
 interface CartDrawerProps {
   cart: CartItem[];
@@ -116,7 +117,12 @@ const CartDrawer = ({
               }
 
               return (
-                <div className={styles["cart-item"]} key={variant?.sku}>
+                <Link
+                  href={`/product/${item.slug}`}
+                  className={styles["cart-item"]}
+                  key={variant?.sku}
+                  onClick={onClose}
+                >
                   <Image
                     src={item?.imagesProduct[variant.indexImageDisplay]}
                     alt={`product-${item?.title}`}
@@ -154,7 +160,7 @@ const CartDrawer = ({
                       </span>
                     </div>
                   </div>
-                </div>
+                </Link>
               );
             });
           })}
