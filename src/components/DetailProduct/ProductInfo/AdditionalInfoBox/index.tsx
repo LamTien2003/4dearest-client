@@ -23,7 +23,7 @@ const AdditionalInfoBox = ({ product, variant }: AdditionalInfoBoxProps) => {
       </p>
       <p className={styles["additional-info__item"]}>
         <label>Vendor:</label>
-        <span>4Dearest - Gift & Accessories</span>
+        <span>4Dearest</span>
       </p>
       <p className={styles["additional-info__item"]}>
         <label>Tags:</label>

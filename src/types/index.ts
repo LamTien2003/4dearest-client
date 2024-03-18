@@ -7,10 +7,7 @@ export const ShippingType = {
 export interface ProductVariant {
   sku: string;
   size: string;
-  color: {
-    label: string;
-    colorCode: string;
-  };
+  color: string;
   initialPrice: number;
   discountPrice: number;
   inventory: number;
@@ -28,6 +25,7 @@ export interface Product {
   subTitle: string;
   description: string;
   imagesProduct: string[];
+  imageChart: string;
   additionalInfo: Object;
   variants: ProductVariant[];
   tags: string[];
@@ -45,10 +43,7 @@ export interface ProductPayload {
     sku: string;
     amount: number;
     price: number;
-    color: {
-      label: string;
-      colorCode: string;
-    };
+    color: string;
   }[];
 }
 export interface ShippingMethodPayload {

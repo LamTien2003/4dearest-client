@@ -17,6 +17,7 @@ import {
 } from "@/components/Button/Button.d";
 import { DrawerPlacement } from "@/components/Drawer/Drawer.d";
 import { SelectSize } from "@/components/Select/Select.d";
+import { Category } from "@/types";
 import styles from "./SortingBox.module.css";
 
 const options = [
@@ -38,7 +39,7 @@ const options = [
   },
 ];
 
-const SortingBox = () => {
+const SortingBox = ({ categories }: { categories: Category[] }) => {
   const [openFilterModal, setOpenFilterModal] = useState(false);
   const { pushParams } = useParamsControl();
 
@@ -73,7 +74,10 @@ const SortingBox = () => {
           placement={DrawerPlacement.Left}
           onClose={() => setOpenFilterModal(false)}
         >
-          <FilterBox onClose={() => setOpenFilterModal(false)} />
+          <FilterBox
+            onClose={() => setOpenFilterModal(false)}
+            categories={categories}
+          />
         </Drawer>
       </Form>
     </Formik>

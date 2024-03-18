@@ -71,6 +71,10 @@ const CouponBox = ({
         isSubmit
         onClick={e => {
           e.preventDefault();
+          console.log(values.coupon);
+          if (!values.coupon) {
+            return;
+          }
           onVerifyCoupon(values.coupon);
         }}
       >

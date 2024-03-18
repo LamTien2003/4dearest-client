@@ -25,8 +25,9 @@ const Button = ({
 }: ButtonProps) => {
   const handleClick = (e: any) => {
     if (!disabled) {
-      onClick && onClick(e);
+      return onClick && onClick(e);
     }
+    e.preventDefault();
   };
 
   return (

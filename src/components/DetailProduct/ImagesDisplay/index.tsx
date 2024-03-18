@@ -17,14 +17,15 @@ interface ImagesDisplayProps {
 
 const settings = {
   dots: false,
-  infinite: false,
-  slidesToShow: 6,
+  infinite: true,
+  slidesToShow: 4,
   slidesToScroll: 1,
   speed: 1000,
   autoplaySpeed: 2000,
   lazyLoad: "ondemand" as LazyLoadTypes,
   cssEase: "cubic-bezier(0.645, 0.045, 0.355, 1.000)",
 };
+
 const ImagesDisplay = ({ images }: ImagesDisplayProps) => {
   const context = useContext<DetailProductContextValue>(
     DetailProductThemeContext

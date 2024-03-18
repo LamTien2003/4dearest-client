@@ -117,28 +117,29 @@ const CartDrawer = ({
               }
 
               return (
-                <Link
-                  href={`/product/${item.slug}`}
-                  className={styles["cart-item"]}
-                  key={variant?.sku}
-                  onClick={onClose}
-                >
-                  <Image
-                    src={item?.imagesProduct[variant.indexImageDisplay]}
-                    alt={`product-${item?.title}`}
-                    width={120}
-                    height={160}
-                  />
+                <div className={styles["cart-item"]} key={variant?.sku}>
+                  <Link href={`/product/${item.slug}`}>
+                    <Image
+                      src={item?.imagesProduct[variant.indexImageDisplay]}
+                      alt={`product-${item?.title}`}
+                      width={120}
+                      height={160}
+                      onClick={onClose}
+                    />
+                  </Link>
                   <div className={styles["right"]}>
-                    <h3 className={styles["right__title"]}>{item?.title}</h3>
+                    <Link
+                      href={`/product/${item.slug}`}
+                      className={styles["right__title"]}
+                      onClick={onClose}
+                    >
+                      {item?.title}
+                    </Link>
                     <h4 className={styles["right__price"]}>
                       {formatCurrency(variant.discountPrice)}
                     </h4>
-                    <p
-                      className={styles["right__color"]}
-                      style={{ color: variant?.color?.colorCode || "" }}
-                    >
-                      {variant?.color?.label.toUpperCase()}
+                    <p className={styles["right__color"]}>
+                      {variant?.color.toUpperCase()}
                     </p>
                     <div className={styles["right-action"]}>
                       <NumberInput
@@ -160,7 +161,7 @@ const CartDrawer = ({
                       </span>
                     </div>
                   </div>
-                </Link>
+                </div>
               );
             });
           })}

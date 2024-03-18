@@ -7,15 +7,22 @@
 .menu__item {
   position: relative;
   display: inline-block;
-  padding: 2rem 1.2rem;
   font-size: 1.5rem;
   font-weight: 500;
 }
 
+.menu__item .link {
+  position: relative;
+  display: block;
+  padding: 2rem 1.2rem;
+  z-index: 10000;
+}
 .menu__item::before {
   position: absolute;
   content: "";
   bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
   height: 0.2rem;
   width: 0;
   background-color: var(--color-gray-900);
@@ -70,7 +77,6 @@
 }
 @media only screen and (max-width: 1500px) {
   .menu__item {
-    padding: 2rem 0.75rem;
     font-size: 1.25rem;
   }
 }

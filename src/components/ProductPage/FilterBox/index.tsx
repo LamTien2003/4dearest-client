@@ -3,23 +3,27 @@ import { useState } from "react";
 
 import Spinner from "@/components/Loading/Spinner";
 import RangeSlider from "@/components/RangeSlider";
-import useCategoriesQuery from "@/hooks/useCategoriesQuery";
 import useParamsControl from "@/hooks/useParamsControl";
 
+import { Category } from "@/types";
 import styles from "./FilterBox.module.css";
 
 const minPriceFilter = 1;
 const maxPriceFilter = 200;
 const step = 10;
 
-const FilterBox = ({ onClose }: { onClose: () => void }) => {
+const FilterBox = ({
+  onClose,
+  categories,
+}: {
+  onClose: () => void;
+  categories: Category[];
+}) => {
   const [rangePrice, setRangePrice] = useState([
     minPriceFilter,
     maxPriceFilter,
   ]);
   const { pushParams } = useParamsControl();
-
-  const { categories, isCategoriesLoading } = useCategoriesQuery(1, 10);
 
   return (
     <div className={styles["wrapper"]}>
@@ -47,7 +51,6 @@ const FilterBox = ({ onClose }: { onClose: () => void }) => {
 
       <div className={styles["categories"]}>
         <h5 className={styles["categories__title"]}>Categories</h5>
-        {isCategoriesLoading && <Spinner />}
         {categories.map((item, index) => (
           <p
             className={styles["categories__item"]}

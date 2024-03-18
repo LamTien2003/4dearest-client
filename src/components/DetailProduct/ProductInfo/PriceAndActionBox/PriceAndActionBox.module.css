@@ -79,43 +79,22 @@
   display: flex;
   gap: 1.6rem;
 }
+
 .circle-radio {
-  position: relative;
-  display: inline-block;
-  width: 35px;
-  height: 35px;
-  background-color: black;
-  border-radius: 99999px;
+  display: block;
   cursor: pointer;
-  border: 1px solid var(--color-gray-700);
+  border-radius: 4px;
+  border: 2px solid transparent;
+  overflow: hidden;
+  transition: all linear 0.2s;
 }
-
-.circle-radio--active::before {
-  position: absolute;
-  content: "";
-  border-radius: 99999px;
-  border: 2px solid var(--white);
-  width: 90%;
-  height: 90%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.circle-radio--active {
+  border-color: var(--color-gray-800);
 }
-
 .disabled-radio {
-  cursor: not-allowed;
-  border: 3px solid rgb(178, 15, 15);
-}
-.disabled-radio::after {
-  position: absolute;
-  top: 37%;
-  left: 82%;
-  transform: translate(-50%, -50%);
-  rotate: -42deg;
-  content: "";
-  width: 4px;
-  height: 100%;
-  background-color: rgb(145, 18, 18);
+  filter: grayscale(1);
+  border: 1px dashed black;
+  pointer-events: none;
 }
 
 /* Actions */
@@ -126,6 +105,12 @@
   margin-bottom: 1.6rem;
 }
 
+.note-shipping {
+  text-align: center;
+  font-size: 1.4rem;
+  color: var(--color-gray-800);
+  margin: 3rem 0 1rem;
+}
 @media (max-width: 800px) {
   .price-box-popup__item {
     font-size: 1.2rem;

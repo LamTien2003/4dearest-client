@@ -33,3 +33,6 @@
   font-size: 1.45rem;
   font-weight: 500;
 }
+.cart-item-info__color {
+  color: var(--color-gray-700);
+}

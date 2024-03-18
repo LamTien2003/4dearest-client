@@ -503,6 +503,12 @@ const CheckoutPage = () => {
                     if (Object.keys(errorsValidate).length === 0) {
                       return actions.resolve();
                     }
+
+                    const errorField = document.querySelector(".color--error");
+                    errorField?.scrollIntoView({
+                      behavior: "smooth",
+                      block: "center",
+                    });
                     return actions.reject();
                   }}
                   createOrder={async () => await onCreateOrderRequest(values)}

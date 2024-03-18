@@ -26,7 +26,6 @@ const ThankYouPage = ({
       <div className={styles["body"]}>
         <div className={styles["logo"]}>
           <Image src={Logo} alt="" />
-          <Image src={CircleCheckIcon} alt="" width={80} height={80} />
         </div>
         <div className={styles["context"]}>
           <h3 className={styles["context__title"]}>Your order is confirmed.</h3>

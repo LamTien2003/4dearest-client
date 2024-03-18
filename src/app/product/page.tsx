@@ -6,7 +6,7 @@ import ProductItem from "@/components/ProductPage/ProductItem";
 import PaginationBox from "@/components/ProductPage/PaginationBox";
 import { buildQueryString, convertSlugToString } from "@/utils/helper";
 
-import { Product } from "@/types";
+import { Category, Product } from "@/types";
 import styles from "./ProductPage.module.css";
 import { Suspense } from "react";
 import Spinner from "@/components/Loading/Spinner";
@@ -23,6 +23,17 @@ async function getProducts(query: string) {
   }
   const response = await request.json();
   return response?.data;
+}
+
+async function getCategories() {
+  const request = await fetch(
+    `${process.env.API_REQUEST_URL}/category?sort=-order`
+  );
+  if (!request.ok) {
+    throw new Error("Not found product");
+  }
+  const response = await request.json();
+  return (response?.data?.data as Category[]) || [];
 }
 
 export async function generateMetadata(
@@ -58,6 +69,7 @@ const ProductPage = async ({
       limit: productPerPage,
     })
   );
+  const categories = await getCategories();
 
   return (
     <div>
@@ -80,7 +92,7 @@ const ProductPage = async ({
           <p className={styles["content__sub-title"]}>
             Showing all {productsResponse?.totalItems} results
           </p>
-          <SortingBox />
+          <SortingBox categories={categories} />
           <div className={styles["content-products"]}>
             {productsResponse?.data?.length === 0 && (
               <div className={styles["not-found-title"]}>

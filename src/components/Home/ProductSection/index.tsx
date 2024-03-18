@@ -5,11 +5,12 @@ import ProductItem from "@/components/ProductPage/ProductItem";
 import { Product } from "@/types";
 import styles from "./ProductSection.module.css";
 
+const limitPerPage = 10;
 const settings = {
   infinite: true,
   speed: 500,
   autoplaySpeed: 5000,
-  autoplay: true,
+  autoplay: false,
   cssEase: "linear",
   slidesToShow: 4,
   slidesToScroll: 1,
@@ -43,13 +44,14 @@ const settings = {
 };
 
 async function getProducts() {
-  const request = await fetch(`${process.env.API_REQUEST_URL}/product`);
+  const request = await fetch(
+    `${process.env.API_REQUEST_URL}/product?page=1&limit=${limitPerPage}`
+  );
   if (!request.ok) {
-    // This will activate the closest `error.js` Error Boundary
     throw new Error("Failed to fetching data");
   }
   const response = await request.json();
-  return response?.data?.data as Product[];
+  return (response?.data?.data as Product[]) || [];
 }
 
 const ProductSection = async () => {

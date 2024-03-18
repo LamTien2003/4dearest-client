@@ -39,50 +39,6 @@ enum ModalType {
   Hidden = "",
 }
 
-const modalContent: {
-  [key: string]: {
-    icon?: ReactNode;
-    title: string;
-    body: ReactNode;
-    hidden?: boolean;
-  };
-} = {
-  [ModalType.Chart]: {
-    icon: <Image src={rulerIcon} width={21} height={21} alt="Viewing" />,
-    title: "Size Chart",
-    body: <Image src={sizeChartCandlesImage} width={500} height={500} alt="" />,
-  },
-  [ModalType.Policy]: {
-    icon: (
-      <Image
-        src={shieldIcon}
-        width={21}
-        height={21}
-        alt="Shipping and return policy"
-      />
-    ),
-    title: "Shipping and return",
-    body: <PolicyModal />,
-  },
-  [ModalType.Contact]: {
-    icon: (
-      <Image src={envelopeIcon} width={21} height={21} alt="contact info" />
-    ),
-    title: "Contact with us",
-    body: <ContactModal />,
-  },
-  [ModalType.Get_Coupon]: {
-    icon: (
-      <Image src={envelopeIcon} width={21} height={21} alt="contact info" />
-    ),
-    title: "Get coupon discount",
-    body: <GetCouponModal />,
-    hidden: true,
-  },
-};
-
-[];
-
 interface PriceAndActionBoxProps {
   product: Product;
 }
@@ -94,7 +50,7 @@ const PriceAndActionBox = ({ product }: PriceAndActionBoxProps) => {
   );
   const [amount, setAmount] = useState(1);
   const [modal, setModal] = useState<string>(ModalType.Hidden);
-  const [color, setColor] = useState(product?.variants[0].color.label || "");
+  const [color, setColor] = useState(product?.variants[0].color || "");
   const [initialPrice, setInitialPrice] = useState(
     product?.variants[0].initialPrice || 0
   );
@@ -105,10 +61,58 @@ const PriceAndActionBox = ({ product }: PriceAndActionBoxProps) => {
 
   const selectedVariant = useMemo(() => {
     return (
-      product?.variants?.find(variant => variant?.color?.label === color) ||
+      product?.variants?.find(variant => variant?.color === color) ||
       product?.variants[0]
     );
   }, [color]);
+
+  const modalContent: {
+    [key: string]: {
+      icon?: ReactNode;
+      title: string;
+      body: ReactNode;
+      hidden?: boolean;
+    };
+  } = useMemo(
+    () => ({
+      [ModalType.Chart]: {
+        icon: <Image src={rulerIcon} width={21} height={21} alt="Viewing" />,
+        title: "Size Chart",
+        body: (
+          <Image src={product?.imageChart} width={500} height={500} alt="" />
+        ),
+        hidden: !product?.imageChart,
+      },
+      [ModalType.Policy]: {
+        icon: (
+          <Image
+            src={shieldIcon}
+            width={21}
+            height={21}
+            alt="Shipping and return policy"
+          />
+        ),
+        title: "Shipping and return",
+        body: <PolicyModal />,
+      },
+      [ModalType.Contact]: {
+        icon: (
+          <Image src={envelopeIcon} width={21} height={21} alt="contact info" />
+        ),
+        title: "Contact with us",
+        body: <ContactModal />,
+      },
+      [ModalType.Get_Coupon]: {
+        icon: (
+          <Image src={envelopeIcon} width={21} height={21} alt="contact info" />
+        ),
+        title: "Get coupon discount",
+        body: <GetCouponModal />,
+        hidden: true,
+      },
+    }),
+    []
+  );
 
   const onAddToCart = () => {
     if (selectedVariant.inventory <= 0) {
@@ -280,7 +284,13 @@ const PriceAndActionBox = ({ product }: PriceAndActionBoxProps) => {
             {product?.variants.map(variant => (
               <Tooltip
                 key={variant?.sku}
-                label={variant?.color.label}
+                label={
+                  variant?.inventory > 0 ? (
+                    variant?.color
+                  ) : (
+                    <span className="color--error">Sold out</span>
+                  )
+                }
                 placement="top"
                 hasArrow
                 fontSize={"medium"}
@@ -290,17 +300,23 @@ const PriceAndActionBox = ({ product }: PriceAndActionBoxProps) => {
                     htmlFor={`color-radio-${variant?.sku}`}
                     className={classNames(styles["circle-radio"], {
                       [styles["circle-radio--active"]]:
-                        variant?.color.label === color,
-                      [styles["disabled-radio"]]: variant.inventory < 0,
+                        variant?.color === color,
+                      [styles["disabled-radio"]]: variant.inventory <= 0,
                     })}
-                    style={{ backgroundColor: variant?.color.colorCode }}
-                  />
+                  >
+                    <Image
+                      src={product.imagesProduct[variant.indexImageDisplay]}
+                      width={50}
+                      height={40}
+                      alt=""
+                    />
+                  </label>
                   <input
                     type="radio"
                     name="color"
                     id={`color-radio-${variant?.sku}`}
-                    value={variant?.color.label}
-                    checked={variant?.color.label === color}
+                    value={variant?.color}
+                    checked={variant?.color === color}
                     hidden
                     onChange={e => {
                       setColor(e.target.value);
@@ -337,6 +353,9 @@ const PriceAndActionBox = ({ product }: PriceAndActionBoxProps) => {
               Add to cart
             </Button>
           </div>
+          <p
+            className={styles["note-shipping"]}
+          >{`Note: We'll use and charge the standard shipping fee by default if your order less than 50$`}</p>
           <PayPalButtons
             style={{
               height: 48,

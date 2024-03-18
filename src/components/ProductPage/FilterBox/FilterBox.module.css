@@ -37,26 +37,3 @@
 .categories__item:hover {
   color: var(--primary-color-400);
 }
-
-.best-seller__item {
-  display: flex;
-  gap: 2rem;
-  margin-bottom: 2rem;
-}
-.product-info__title {
-  font-size: 1.8rem;
-  font-weight: 600;
-  letter-spacing: 0.2rem;
-  color: var(--color-gray-900);
-}
-.product-info__sub-title {
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: var(--color-gray-700);
-  margin-bottom: 1rem;
-}
-.product-info__price {
-  font-size: 1.8rem;
-  font-weight: 400;
-  color: var(--color-gray-900);
-}

@@ -31,14 +31,8 @@ const CartItemList = ({ cart }: { cart: CartItem[] }) => {
                 <h2 className={styles["cart-item-info__title"]}>
                   {item?.title}
                 </h2>
-                <h3
-                  className={styles["cart-item-info__color"]}
-                  style={{
-                    color: variant.color.colorCode,
-                    fontWeight: 600,
-                  }}
-                >
-                  {variant?.color.label.toUpperCase()}
+                <h3 className={styles["cart-item-info__color"]}>
+                  {variant?.color.toUpperCase()}
                 </h3>
               </div>
               <h5 className={styles["cart-item-info__price"]}>
