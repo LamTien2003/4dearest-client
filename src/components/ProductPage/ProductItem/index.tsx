@@ -27,6 +27,7 @@ const ProductItem = ({ product }: { product: Product }) => {
             style={{
               height: "31.4rem",
               objectFit: "cover",
+              objectPosition: "bottom",
             }}
           />
           <Image
@@ -38,6 +39,7 @@ const ProductItem = ({ product }: { product: Product }) => {
             style={{
               height: "31.4rem",
               objectFit: "cover",
+              objectPosition: "bottom",
             }}
           />
           <ProductItemActions className={styles["actions"]} product={product} />
