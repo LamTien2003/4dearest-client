@@ -31,6 +31,7 @@ export interface Product {
   tags: string[];
   slug: string;
   price: number;
+  initialPrice: number;
   sold: number;
   createdAt: Date;
   updatedAt: Date;

@@ -112,6 +112,9 @@
   margin: 3rem 0 1rem;
 }
 @media (max-width: 800px) {
+  .price-box-popup {
+    gap: 1rem;
+  }
   .price-box-popup__item {
     font-size: 1.2rem;
   }

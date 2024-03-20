@@ -7,11 +7,6 @@ import { Product } from "@/types";
 import styles from "./DescriptionTab.module.css";
 
 const DescriptionTab = ({ product }: { product: Product }) => {
-  console.log(
-    parse(
-      "<p><strong>Embark on a magical journey of romance with the Eternal Flower Rose Artificial Flower. This product isn't just an ordinary artificial bouquet; it's an enchanting masterpiece designed to create a perfect romantic ambiance for every special occasion.</strong></p>"
-    )
-  );
   return (
     <>
       <div className={styles["wrapper"]}>{parse(product?.description)}</div>

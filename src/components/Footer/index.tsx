@@ -24,46 +24,55 @@ const Footer = () => {
           <Link className={styles["body-item__link"]} href={"#"}>
             Gmail: 4dearest.official@gmail.com
           </Link>
-          <Link className={styles["body-item__link"]} href={"#"}>
+          <a
+            target="_blank"
+            className={styles["body-item__link"]}
+            href="https://www.instagram.com/4dearest.official/"
+          >
             IG: 4dearest.official
-          </Link>
+          </a>
         </div>
 
         <div className={styles["body-item"]}>
           <h4 className={styles["body-item__title"]}>SHOP</h4>
-          <Link className={styles["body-item__link"]} href={"#"}>
-            All Candles
+          <Link
+            className={styles["body-item__link"]}
+            href={"/product?category=accessories"}
+          >
+            All Accessories
           </Link>
-          <Link className={styles["body-item__link"]} href={"#"}>
+          <Link
+            className={styles["body-item__link"]}
+            href={"/product?category=gifts"}
+          >
             All Gifts
           </Link>
-          <Link className={styles["body-item__link"]} href={"#"}>
-            Accessories
-          </Link>
-          <Link className={styles["body-item__link"]} href={"#"}>
-            Home Decors
+          <Link
+            className={styles["body-item__link"]}
+            href={"/product?category=decorations"}
+          >
+            All Decorations
           </Link>
         </div>
         <div className={styles["body-item"]}>
           <h4 className={styles["body-item__title"]}>Socials</h4>
-          <Link className={styles["body-item__link"]} href={"#"}>
+          <a
+            target="_blank"
+            className={styles["body-item__link"]}
+            href="https://www.instagram.com/4dearest.official/"
+          >
             Instagram
-          </Link>
-          <Link className={styles["body-item__link"]} href={"#"}>
+          </a>
+          <a
+            target="_blank"
+            className={styles["body-item__link"]}
+            href="https://www.facebook.com/profile.php?id=61557038176940"
+          >
             Facebook
-          </Link>
-          <Link className={styles["body-item__link"]} href={"#"}>
-            Tiktok
-          </Link>
-          <Link className={styles["body-item__link"]} href={"#"}>
-            Youtube
-          </Link>
+          </a>
         </div>
         <div className={styles["body-item"]}>
           <h4 className={styles["body-item__title"]}>HELP</h4>
-          <Link className={styles["body-item__link"]} href={"#"}>
-            Contact
-          </Link>
           <Link
             className={styles["body-item__link"]}
             href={"/policies/privacy-policy"}
@@ -87,8 +96,8 @@ const Footer = () => {
 
       <div className={styles["foot"]}>
         <div className={styles["foot__item"]}>
-          <Link href="">Term of use</Link>
-          <Link href="">Privacy</Link>
+          <Link href={"/policies/return-policy"}>Return policy</Link>
+          <Link href={"/policies/privacy-policy"}>Privacy</Link>
         </div>
         <Image src={paymentMethodSrc} alt="Payment Method - 4Dearest" />
         <div className={styles["foot__item"]}>

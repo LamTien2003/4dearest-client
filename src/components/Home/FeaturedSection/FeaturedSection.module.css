@@ -3,7 +3,7 @@
   margin: auto;
   display: flex;
   padding: 2rem;
-  gap: 12rem;
+  gap: 6rem;
 }
 
 .left {
@@ -28,7 +28,6 @@
 
 .right__info {
   text-align: center;
-  padding: 0 15%;
 }
 
 .right__info .title {

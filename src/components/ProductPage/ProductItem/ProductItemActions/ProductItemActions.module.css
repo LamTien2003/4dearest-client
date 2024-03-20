@@ -28,3 +28,7 @@
   transition: all linear 0.25s;
   filter: opacity(0.5);
 }
+
+.modal-wrapper {
+  max-width: var(--max-width);
+}

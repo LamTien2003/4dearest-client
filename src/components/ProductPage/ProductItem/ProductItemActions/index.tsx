@@ -50,7 +50,9 @@ const ProductItemActions = ({
         onClose={() => setOpenQuickView(false)}
         size={ModalSize.Auto}
       >
-        <DetailProduct product={product} />
+        <div className={styles["modal-wrapper"]}>
+          <DetailProduct product={product} />
+        </div>
       </Modal>
     </>
   );

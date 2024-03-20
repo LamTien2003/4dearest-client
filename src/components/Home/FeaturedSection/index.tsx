@@ -14,7 +14,7 @@ const FeaturedSection = () => {
           <Image
             className={styles["left__image1"]}
             src={
-              "https://res.cloudinary.com/dcv1op3hs/image/upload/v1709099532/h1-img-03_iugxe6.jpg"
+              "https://res.cloudinary.com/dcv1op3hs/image/upload/v1710855935/products/txv3bc2amzuot1uzfjxr.jpg"
             }
             width={800}
             height={800}
@@ -23,7 +23,7 @@ const FeaturedSection = () => {
           <Image
             className={styles["left__image2"]}
             src={
-              "https://res.cloudinary.com/dcv1op3hs/image/upload/v1709099531/h1-img-04_s4v98o.jpg"
+              "https://res.cloudinary.com/dcv1op3hs/image/upload/v1710855935/products/esj1vd77lo8rmx7edasc.jpg"
             }
             width={400}
             height={400}
@@ -33,21 +33,24 @@ const FeaturedSection = () => {
         <div className={styles["right"]}>
           <Image
             src={
-              "https://res.cloudinary.com/dcv1op3hs/image/upload/v1709099569/h1-img-08_i6gvu9.jpg"
+              "https://res.cloudinary.com/dcv1op3hs/image/upload/v1710855935/products/di9yyvlswwwozr0hcgte.jpg"
             }
-            width={400}
-            height={400}
+            width={300}
+            height={300}
             alt=""
           />
           <div className={styles["right__info"]}>
-            <h3 className={styles["title"]}>OUR FAVOURITES</h3>
+            <h3 className={styles["title"]}>Enchanted Rose Teddy Bear</h3>
             <h3 className={styles["sub-title"]}>
-              Lorem ipsum dolor sit amet, consectetur adipi, scing seddo eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Pretium quam
-              vulputate.
+              A Symbol of Endless Love The combination of a teddy bear and roses
+              is a classic symbol of love and romance. Our Enchanted Rose Teddy
+              Bear takes this timeless concept to new heights, offering a unique
+              and unforgettable way to express your deepest emotions and
+              affection.
             </h3>
           </div>
           <Button
+            href="/product/enchanted-rose-teddy-bear"
             colorType={ButtonColorType.Black}
             variant={ButtonVariant.Solid}
           >

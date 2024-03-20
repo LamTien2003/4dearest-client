@@ -40,7 +40,7 @@ const MenuMobile = ({ menu }: MenuProps) => {
             {menu.map((item, index) => {
               return (
                 <div key={`${item.title} - ${index}`}>
-                  {item.children ? (
+                  {item?.children && item?.children?.length ? (
                     <Dropdown
                       title={
                         <span className={styles["menu-mobile__item"]}>

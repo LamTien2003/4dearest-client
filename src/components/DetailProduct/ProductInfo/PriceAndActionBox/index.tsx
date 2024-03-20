@@ -308,6 +308,11 @@ const PriceAndActionBox = ({ product }: PriceAndActionBoxProps) => {
                       src={product.imagesProduct[variant.indexImageDisplay]}
                       width={50}
                       height={40}
+                      style={{
+                        width: 50,
+                        height: 50,
+                        objectFit: "cover",
+                      }}
                       alt=""
                     />
                   </label>

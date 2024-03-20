@@ -70,7 +70,13 @@ const Header = async () => {
           />
         </Link>
 
-        <Navbar menu={options} />
+        <Navbar
+          menu={[
+            { title: "Home", href: "/" },
+            { title: "Shop", href: "/product" },
+            ...options,
+          ]}
+        />
         <Action />
       </div>
     </header>

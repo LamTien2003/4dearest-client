@@ -201,7 +201,7 @@ const PrivacyPolicyPage = () => {
         <br />
         For more information about our privacy practices, if you have questions,
         or if you would like to make a complaint, please contact us through our
-        <Link href="/contact">Help Center</Link>.
+        email: <strong>4dearest.official@gmail.com</strong>
       </p>
       <p>
         4dearest - For your dearest

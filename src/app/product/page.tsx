@@ -67,6 +67,7 @@ const ProductPage = async ({
       page: 1,
       ...searchParams,
       limit: productPerPage,
+      sort: "-order",
     })
   );
   const categories = await getCategories();

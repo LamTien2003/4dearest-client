@@ -5,11 +5,7 @@ import Button from "@/components/Button";
 import ProductItemActions from "@/components/ProductPage/ProductItem/ProductItemActions";
 import { formatCurrency } from "@/utils/helper";
 
-import {
-  ButtonColorType,
-  ButtonSize,
-  ButtonVariant,
-} from "@/components/Button/Button.d";
+import { ButtonColorType, ButtonVariant } from "@/components/Button/Button.d";
 import { Product } from "@/types";
 import styles from "./ProductItem.module.css";
 
@@ -18,6 +14,10 @@ const ProductItem = ({ product }: { product: Product }) => {
     <div>
       <Link href={`/product/${product.slug}`} className={styles["product"]}>
         <div className={styles["product-image"]}>
+          {product?.variants[0].initialPrice >
+            product?.variants[0].discountPrice && (
+            <span className={styles["sale-tag"]}>Sale</span>
+          )}
           <Image
             className={styles["primary-image"]}
             src={product?.imagesProduct[0]}
@@ -48,7 +48,10 @@ const ProductItem = ({ product }: { product: Product }) => {
             {product?.subTitle}
           </h5>
           <p className={styles["product-info__price"]}>
-            {formatCurrency(product?.price)}
+            <span className={styles["discount"]}>
+              {formatCurrency(product?.variants[0].initialPrice)}
+            </span>
+            {formatCurrency(product?.variants[0].discountPrice)}
           </p>
           <Button
             variant={ButtonVariant.Solid}

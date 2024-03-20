@@ -11,7 +11,6 @@ const settings = {
   speed: 500,
   autoplaySpeed: 5000,
   autoplay: false,
-  cssEase: "linear",
   slidesToShow: 4,
   slidesToScroll: 1,
   waitForAnimate: false,
@@ -45,7 +44,7 @@ const settings = {
 
 async function getProducts() {
   const request = await fetch(
-    `${process.env.API_REQUEST_URL}/product?page=1&limit=${limitPerPage}`
+    `${process.env.API_REQUEST_URL}/product?page=1&limit=${limitPerPage}&sort=-order`
   );
   if (!request.ok) {
     throw new Error("Failed to fetching data");

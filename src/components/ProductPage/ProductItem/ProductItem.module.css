@@ -49,14 +49,50 @@
   -webkit-box-orient: vertical;
 }
 .product-info__sub-title {
+  text-align: center;
   font-size: 1.5rem;
   font-weight: 400;
   color: var(--color-gray-700);
   margin-bottom: 1rem;
 }
 .product-info__price {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
   font-size: 1.8rem;
   font-weight: 400;
   color: var(--color-gray-900);
   margin-bottom: 1rem;
+}
+.product-info__price .discount {
+  display: block;
+  position: relative;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--color-gray-500);
+}
+
+.product-info__price .discount::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-gray-600);
+}
+
+.sale-tag {
+  position: absolute;
+  content: "sale";
+  top: 0px;
+  left: 0;
+  width: 25%;
+  height: 2.5rem;
+  background-color: #733636;
+  color: #fff2f2;
+  z-index: 8;
+  font-size: 1.4rem;
+  text-align: center;
 }

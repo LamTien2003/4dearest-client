@@ -8,7 +8,7 @@
 }
 
 .section-product__left {
-  max-width: 40%;
+  width: 40%;
 }
 .section-product__right {
   flex: 1;
@@ -33,7 +33,7 @@
     padding: 2rem;
   }
   .section-product__left {
-    max-width: 100%;
+    width: 100%;
   }
   .section-product__right {
     padding: 0;

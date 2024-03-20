@@ -30,11 +30,12 @@
   display: flex;
   justify-content: center;
   width: 100%;
+  max-width: 50rem;
+  min-height: 50rem;
+  max-height: 60rem;
 }
 
 .active-image img {
-  width: 50rem;
-  max-height: 60rem;
   object-fit: contain;
 }
 .mounting-animation {

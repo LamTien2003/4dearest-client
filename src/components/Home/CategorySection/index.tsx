@@ -19,7 +19,7 @@ async function getCategories() {
 }
 const CategorySection = async () => {
   const categoryList = await getCategories();
-  console.log(categoryList);
+
   return (
     <div className={styles["wrapper"]}>
       {categoryList

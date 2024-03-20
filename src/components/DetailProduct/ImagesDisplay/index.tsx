@@ -20,10 +20,6 @@ const settings = {
   infinite: true,
   slidesToShow: 4,
   slidesToScroll: 1,
-  speed: 1000,
-  autoplaySpeed: 2000,
-  lazyLoad: "ondemand" as LazyLoadTypes,
-  cssEase: "cubic-bezier(0.645, 0.045, 0.355, 1.000)",
 };
 
 const ImagesDisplay = ({ images }: ImagesDisplayProps) => {
@@ -37,8 +33,7 @@ const ImagesDisplay = ({ images }: ImagesDisplayProps) => {
         <Image
           className={styles["mounting-animation"]}
           src={context?.activeImage}
-          width={400}
-          height={500}
+          fill
           key={context?.activeImage}
           alt=""
         />
@@ -47,8 +42,8 @@ const ImagesDisplay = ({ images }: ImagesDisplayProps) => {
         <Slider
           settings={{
             ...settings,
-            afterChange: (current: number) =>
-              context.setActiveImage(images[current]),
+            beforeChange: (current: number, next: number) =>
+              context.setActiveImage(images[next]),
           }}
           className={styles["slider"]}
         >
