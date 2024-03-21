@@ -34,8 +34,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Script id="facebook-pixel" strategy="afterInteractive">
-        {`
+      <Script
+        id="facebook-pixel"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
                     <!-- Meta Pixel Code -->
                       <script>
                       !function(f,b,e,v,n,t,s)
@@ -53,8 +56,9 @@ export default function RootLayout({
                       src="https://www.facebook.com/tr?id=611716307821381&ev=PageView&noscript=1"
                       /></noscript>
                     <!-- End Meta Pixel Code -->
-`}
-      </Script>
+`,
+        }}
+      />
 
       <body className={workSansFont.className}>
         <QueryClientProvider>
