@@ -4,7 +4,7 @@ export const jsonLdStore = {
   name: "4dearest",
   image: {
     "@type": "ImageObject",
-    url: "https://res.cloudinary.com/dcv1op3hs/image/upload/v1710585471/logo_4dearest_-_version_1_-_background_hbbp5i.png",
+    url: "https://res.cloudinary.com/dcv1op3hs/image/upload/v1711035036/logo_big_-_500x500_iqxusb.png",
     width: "1080",
     height: "1080",
   },
@@ -44,7 +44,7 @@ export const jsonLdService = {
   serviceType: "Ecommerce",
   image: {
     "@type": "ImageObject",
-    url: "https://res.cloudinary.com/dcv1op3hs/image/upload/v1710585471/logo_4dearest_-_version_1_-_background_hbbp5i.png",
+    url: "https://res.cloudinary.com/dcv1op3hs/image/upload/v1711035036/logo_big_-_500x500_iqxusb.png",
     width: 1080,
     height: 1080,
   },
