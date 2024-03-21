@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import logoSrc from "/public/images/logo-ver1.png";
+import logoSrc from "/public/images/logo ver1-new.png";
 import Action from "@/components/Header/Action";
 import Navbar from "@/components/Header/Navbar";
 

@@ -3,7 +3,7 @@ import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import { PropsWithChildren } from "react";
 
 const initialOptions = {
-  clientId: process.env.PAYPAL_CLIENT_ID || "sb",
+  clientId: process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID || "sb",
   currency: "USD",
   intent: "capture",
 };
