@@ -50,17 +50,17 @@ export default function RootLayout({
 `,
         }}
       />
-      <noscript>
-        <img
-          height="1"
-          width="1"
-          style={{ display: "none" }}
-          alt=""
-          src="https://www.facebook.com/tr?id=611716307821381&ev=PageView&noscript=1"
-        />
-      </noscript>
 
       <body className={workSansFont.className}>
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            alt=""
+            src="https://www.facebook.com/tr?id=611716307821381&ev=PageView&noscript=1"
+          />
+        </noscript>
         <QueryClientProvider>
           <ChakraProvider>
             <PaypalProvider>

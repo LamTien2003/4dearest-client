@@ -1,8 +1,7 @@
 import { Metadata } from "next";
 import Image from "next/image";
 
-import Logo from "/public/images/logo-ver1.png";
-import CircleCheckIcon from "/public/images/icons/circle-check.svg";
+import Logo from "/public/images/logo-big.png";
 import Button from "@/components/Button";
 import { decodeURL } from "@/utils/helper";
 

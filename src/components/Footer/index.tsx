@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import logoSrc from "/public/images/logo-ver1-white.png";
+import logoSrc from "/public/images/logo-big-white.png";
 import paymentMethodSrc from "/public/images/payment-method.png";
 
 import styles from "./Footer.module.css";

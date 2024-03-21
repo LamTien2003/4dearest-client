@@ -11,7 +11,7 @@ import styles from "./ProductPage.module.css";
 import { Suspense } from "react";
 import Spinner from "@/components/Loading/Spinner";
 
-const productPerPage = 9;
+const productPerPage = 8;
 async function getProducts(query: string) {
   const request = await fetch(
     `${process.env.API_REQUEST_URL}/product?${query}`,

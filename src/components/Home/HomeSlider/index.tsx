@@ -56,7 +56,7 @@ const HomeSlider = () => {
                 emotions and affection.
               </p>
               <Button
-                href="/product/enchanted-flower-rose-artificial"
+                href="/product/enchanted-rose-teddy-bear"
                 className="w--50"
                 variant={ButtonVariant.Solid}
               >
@@ -65,6 +65,7 @@ const HomeSlider = () => {
             </div>
           </div>
         </div>
+
         <div className={styles["slider-item"]}>
           <Image
             className={styles["slider-item__background"]}
@@ -140,7 +141,7 @@ const HomeSlider = () => {
                 every special occasion.`}
               </p>
               <Button
-                href="/product/astrobunny-charm-necklace"
+                href="/product/enchanted-flower-rose-artificial"
                 className="w--50"
                 variant={ButtonVariant.Solid}
               >

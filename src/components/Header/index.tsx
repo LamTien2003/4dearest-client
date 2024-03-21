@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import logoSrc from "/public/images/logo ver1-new.png";
+import logoSrc from "/public/images/logo-big.png";
 import Action from "@/components/Header/Action";
 import Navbar from "@/components/Header/Navbar";
 
@@ -63,11 +63,7 @@ const Header = async () => {
     <header className={styles["wrapper"]}>
       <div className={styles["header"]}>
         <Link href={"/"} className={styles["logo"]}>
-          <Image
-            src={logoSrc}
-            alt="4dearest Logo"
-            style={{ width: "auto", height: "100%" }}
-          />
+          <Image src={logoSrc} alt="4dearest Logo" style={{ height: "100%" }} />
         </Link>
 
         <Navbar

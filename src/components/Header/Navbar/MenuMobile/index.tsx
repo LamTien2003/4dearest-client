@@ -5,7 +5,7 @@ import { useState } from "react";
 
 import Drawer from "@/components/Drawer";
 import barsIcon from "/public/images/icons/bars.svg";
-import logoSrc from "/public/images/logo-ver1.png";
+import logoSrc from "/public/images/logo-big.png";
 
 import { NavBarOption } from "@/components/Header/Navbar/Navbar.d";
 import styles from "./MenuMobile.module.css";

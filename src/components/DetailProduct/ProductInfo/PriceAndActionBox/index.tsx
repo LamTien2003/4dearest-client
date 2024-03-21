@@ -310,8 +310,9 @@ const PriceAndActionBox = ({ product }: PriceAndActionBoxProps) => {
                       height={40}
                       style={{
                         width: 50,
-                        height: 50,
+                        height: 65,
                         objectFit: "cover",
+                        objectPosition: "bottom",
                       }}
                       alt=""
                     />
