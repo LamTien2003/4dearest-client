@@ -13,15 +13,19 @@ import { Product } from "@/types";
 import styles from "./DetailProductPage.module.css";
 
 async function getDetailProduct(slug: string) {
-  const request = await fetch(
-    `${process.env.API_REQUEST_URL}/product/${slug}`,
-    { next: { revalidate: 120 } }
-  );
-  if (!request.ok) {
-    throw new Error("Not found product");
+  try {
+    const request = await fetch(
+      `${process.env.API_REQUEST_URL}/product/${slug}`,
+      { next: { revalidate: 120 } }
+    );
+    if (!request.ok) {
+      throw new Error("Not found product");
+    }
+    const response = await request.json();
+    return response?.data?.data as Product;
+  } catch (err) {
+    throw err;
   }
-  const response = await request.json();
-  return response?.data?.data as Product;
 }
 
 export async function generateMetadata(
@@ -33,22 +37,28 @@ export async function generateMetadata(
   },
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const { slug } = params;
+  try {
+    const { slug } = params;
 
-  const request = await fetch(`${process.env.API_REQUEST_URL}/product/${slug}`);
-  if (!request.ok) {
-    throw new Error("Not found product");
+    const request = await fetch(
+      `${process.env.API_REQUEST_URL}/product/${slug}`
+    );
+    if (!request.ok) {
+      throw new Error("Not found product");
+    }
+    const response = await request.json();
+    const product = response?.data?.data as Product;
+
+    return {
+      title: `${product.title} – 4DEAREST™`,
+      description: product.description,
+      openGraph: {
+        images: [product.imagesProduct[0]],
+      },
+    };
+  } catch (err) {
+    throw err;
   }
-  const response = await request.json();
-  const product = response?.data?.data as Product;
-
-  return {
-    title: `${product.title} – 4DEAREST™`,
-    description: product.description,
-    openGraph: {
-      images: [product.imagesProduct[0]],
-    },
-  };
 }
 
 const DetailProductPage = async ({ params }: { params: { slug: string } }) => {
