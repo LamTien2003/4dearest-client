@@ -21,3 +21,29 @@
   display: block;
   flex: 1;
 }
+
+.services {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 0.8rem;
+  margin-bottom: 1.6rem;
+}
+.services__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+}
+.services__item p {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--primary-color-500);
+  text-align: center;
+}
+
+@media (max-width: 1000px) {
+  .services__item p {
+    font-size: 1.2rem;
+  }
+}

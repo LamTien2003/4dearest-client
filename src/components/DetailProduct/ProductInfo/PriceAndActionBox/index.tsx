@@ -10,7 +10,7 @@ import envelopeIcon from "/public/images/icons/envelope.svg";
 import shieldIcon from "/public/images/icons/shield.svg";
 import rulerIcon from "/public/images/icons/ruler.svg";
 import ticketIcon from "/public/images/icons/ticket-simple.svg";
-import sizeChartCandlesImage from "/public/images/size-chart-candles-holder.jpg";
+
 import Button from "@/components/Button";
 import {
   DetailProductContextValue,

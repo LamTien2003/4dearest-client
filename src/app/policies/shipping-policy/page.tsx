@@ -23,8 +23,8 @@ const PrivacyPolicyPage = () => {
         <strong>INTERNATIONAL STANDARD SHIPPING</strong>
         <br />
         We have elected to use the most affordable shipping prices through
-        priority mail international. It can take up to 3-7 business days to
-        process orders after they are received. Delivery can range from 15-30
+        priority mail international. It can take up to 1-3 business days to
+        process orders after they are received. Delivery can range from 5-7
         business days depending on your proximity (DOES NOT DELIVERY ON{" "}
         {`SUNDAY's`}
         AND HOLIDAYS) and has no specific guaranteed delivery time. Due to
