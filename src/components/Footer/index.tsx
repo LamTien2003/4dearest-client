@@ -91,6 +91,12 @@ const Footer = () => {
           >
             Shipping policy
           </Link>
+          <Link
+            className={styles["body-item__link"]}
+            href={"/policies/terms-of-service"}
+          >
+            Terms of Service
+          </Link>
         </div>
       </div>
 
